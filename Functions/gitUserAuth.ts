@@ -4,7 +4,7 @@ import Cookie from "cookie-universal"
 
 export const getUserauth = async(data:any,dispatch:any)=>{
     const users = await getUserAuth()
-    const user = users.find((items)=>items.email===data.email && items.image===data.image)
+    const user = users.find((items:any)=>items.email===data.email && items.image===data.image)
     if(user){
         dispatch(addUserSlice({...user}))
         const cookie = Cookie()

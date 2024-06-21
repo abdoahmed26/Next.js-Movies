@@ -6,7 +6,7 @@ export const getUserLogin = async(dispatch:any)=>{
     const cookie = Cookie()
     const token = cookie.get('UserToken')
     const users = await getUser()
-    const user = users.find((items)=>items.id===token)
+    const user = users.find((items:any)=>items.id===token)
     if(user?.email){
         dispatch(addUserSlice({...user}))
     }
