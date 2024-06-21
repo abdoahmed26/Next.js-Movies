@@ -4,7 +4,7 @@ export async function getData(api:string) {
         method: 'GET',
         headers: {
             accept: 'application/json',
-            Authorization: `Bearer ${process.env.TMDB_READ_ACCESS_KEY as string}`,
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmOTJlNzVlZjNiZjMzZDVlNzRmMjExZWRmNWUwYzQ5ZSIsInN1YiI6IjY2NmNlN2NjZjU1YTA1N2YzYTYxY2ViZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.efMkKg8-QFfIKMPRoGLdzyQFMCoaGOUbMj01rhIoUSo`,
         },
     };
     const res = await fetch(api,{...options,cache:"no-store"})
