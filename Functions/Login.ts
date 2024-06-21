@@ -7,7 +7,7 @@ export const login = async(router:any,dispatch:any,setLoading:any,data:{email:st
     setLoading(true)
     // console.log(data)
     const users = await getUser()
-    const user = users.find((items:any)=> items.email===data.email && items.password===data.password)
+    const user = users.find((items:any)=>items.email===data.email && items.password===data.password)
     if(user){
         const cookie = Cookie()
         cookie.set("UserToken",user.id)
