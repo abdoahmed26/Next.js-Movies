@@ -5,7 +5,7 @@ export const signUp = async(router:any,setLoading:any,data:{name:string,email:st
     // console.log(data)
     setLoading(true)
     const users = await getUser()
-    const user = users.find((items)=> items.email===data.email)
+    const user = users.find((items:any)=> items.email===data.email)
     if(user){
         fireToast("This Email is already used!","error")
         setLoading(false)
