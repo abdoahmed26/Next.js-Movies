@@ -7,7 +7,7 @@ const CreditsPerson = async({id}:{id:string}) => {
     return (
         <div className="mt-8">
             <h1 className="font-bold text-xl">Known For</h1>
-            <div className="grid grid-cols-3 gap-5 mt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-4">
                 {
                     result.map((item:any)=>
                         <CreditsCom item={item} key={item.id} />
