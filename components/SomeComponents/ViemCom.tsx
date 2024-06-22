@@ -12,7 +12,13 @@ const ViemCom = ({item}:{item:any}) => {
         <div className="flex flex-col lg:flex-row items-center gap-5 mt-8">
             <div onClick={()=>goToDetails()} className="h-[230px] max-w-[400px] cursor-pointer hover:scale-105 duration-300">
                 <div className="h-full w-[300px] sm:w-[400px] relative">
-                    <Image src={`http://image.tmdb.org/t/p/original/${item.poster_path || item.backdrop_path}`} alt={item.title} width={500} height={300} className="h-full w-full"/>
+                    {
+                        item.poster_path === null ? 
+                        <p className="flex h-full justify-center items-center">
+                            <span>No Image!</span>
+                        </p>
+                        :<Image src={`http://image.tmdb.org/t/p/original/${item.poster_path || item.backdrop_path}`} alt={item.title} width={500} height={300} className="h-full w-full"/>
+                    }
                     <div className="absolute inset-0 bg-gradient-to-b from-gray-200/0 via-gray-900/10 to-[#1A1C29]/80 z-10 h-full w-full">
                         <div className="flex px-3 items-end h-full">
                             <div>
