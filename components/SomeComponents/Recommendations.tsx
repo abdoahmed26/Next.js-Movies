@@ -7,8 +7,14 @@ const Recommendations = async({id}:{id:string}) => {
     const results = data.results
     return (
         <div className="mt-8">
-            <h1 className="font-bold text-xl">Recommendations</h1>
-            <div className="mt-4"><MovieCom data={results} /></div>
+            {
+                results.length > 0 ?
+                <>
+                    <h1 className="font-bold text-xl">Recommendations</h1>
+                    <div className="mt-4"><MovieCom data={results} /></div>
+                </>
+                :null
+            }
         </div>
     );
 }

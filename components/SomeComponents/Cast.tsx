@@ -8,8 +8,14 @@ const Cast = async({id}:{id:string}) => {
     const results = data.cast
     return (
         <div className="mt-8">
-            <h1 className="font-bold text-xl">Top Billed Cast</h1>
-            <CarouselCast results={results} />
+            {
+                results.length > 0 ?
+                <>
+                    <h1 className="font-bold text-xl">Top Billed Cast</h1>
+                    <CarouselCast results={results} />
+                </>
+                :null
+            }
         </div>
     );
 }
